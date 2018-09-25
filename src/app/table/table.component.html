@@ -1,0 +1,31 @@
+Table Here
+
+{{tableService.filteredData.length}}
+
+<div class="container">
+  <div class="col-md-12">
+    <div class="table-responsive games-table">
+      <table class="table table-bordered table-striped">
+        <thead>
+        <tr style="font-weight: bold;">
+          <th *ngFor="let item of cols" style="position: relative">
+            <label>{{item.header}}:</label>
+            <app-filter-box [field] = "item.field"></app-filter-box>
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of tableService.filteredData">
+          <td>{{item.amount}}</td>
+          <td>{{item.balanceAfterTransaction}}</td>
+          <td>{{item.description}}</td>
+          <td>{{item.type}}</td>
+          <td>{{item.firstLevelCategory}}</td>
+          <td>{{item.secondLevelCategory}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <button style="margin-left:15px;" (click)="tableService.resetData()">Reset</button>
+</div>

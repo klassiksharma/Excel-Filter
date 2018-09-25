@@ -1,0 +1,14 @@
+<span class="icon" (click)="show(field,$event)">
+  <i class="material-icons" style="font-size: 28px;" [ngStyle]="{'color': checkIfFiltered1(field)   ? 'green' : 'red'}">filter_list</i>
+</span>
+<div class="filter-box" (appClickOutside)="close($event)" *ngIf="!hideFilterBox">
+  <ul>
+    <li>
+      <input type="checkbox" (click)="addAllToFilter(field, $event)" [checked]="ifCheckedAll(field)"/> All
+    </li>
+    <li *ngFor="let set of tableService.uniqueData[field]">
+      <input type="checkbox" (click)="addToFilter(set,field, $event)" [checked]="ifChecked(set,field)"/>{{set}}
+    </li>
+  </ul>
+</div>
+

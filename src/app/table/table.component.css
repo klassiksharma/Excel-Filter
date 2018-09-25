@@ -1,0 +1,30 @@
+.games-table{
+  height: 400px;
+  font-size: 12px;
+}
+.filter-box{
+  position: absolute;
+  height: 150px;
+  font-size: 12px;
+  overflow: auto;
+  padding: 10px;
+  background: #fff;
+  right: 0;
+  border: 2px solid #c6c6c6;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+li{
+  padding: 5px;
+  font-size: 9px;
+}
+
+
+.icon{
+  display: inline-block;
+  float: right;
+  font-size: 10px;
+}
